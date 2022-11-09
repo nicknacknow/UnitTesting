@@ -29,5 +29,15 @@ namespace ProjectEulerUnitTests
             // Assert
             Assert.AreEqual(44, result);
         }
+        
+        [Test]
+        public void SolveProblem6WithExampleData()
+        {
+            // Act
+            int result = Problem6.Solve(10);
+
+            // Assert
+            Assert.AreEqual(2640, result);
+        }
     }
 }

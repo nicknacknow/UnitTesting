@@ -35,5 +35,22 @@ namespace ProjectEulerSolutions
             }
             return true;
         }
+
+        public bool IsPrime(int num)
+        {
+            // A prime number is a number that does not have any factors.
+            if (num == 2) return true;
+            if (this.CheckThisIsMultipleOfThat(num, 2)) return false; // only even prime is 2, which we just checked for above
+
+            for (int i = 3; i < num; i += 2) // go through every odd number (besides 1) up to num
+                if (this.CheckThisIsMultipleOfThat(num, i)) return false; // if divisible, then this is a factor, therefore contradicting our first statement.
+
+            return true; // once every number up to num has been checked must be true
+        }
+
+        public bool IsSquareNumber(double num)
+        {
+            return Math.Sqrt(num) % 1 == 0;
+        }
     }
 }
